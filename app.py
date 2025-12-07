@@ -31,11 +31,3 @@ def insertion_sort(arr):
     
     steps.append(f"\n✓ Final sorted array: {arr}")
     return arr, steps
-
-
-# Test it
-if __name__ == "__main__":
-    test_array = [5, 2, 8, 1, 9]
-    sorted_arr, steps = insertion_sort(test_array)
-    
-    print("\n".join(steps))
