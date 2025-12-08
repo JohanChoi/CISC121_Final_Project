@@ -202,10 +202,10 @@ demo = gr.Interface(
     description="""
     **Watch how insertion sort builds a sorted array one element at a time!**
     
-    🟦 Blue = Already sorted portion  
-    🟧 Orange = Current element being inserted  
-    🟥 Red = Elements being compared/shifted  
-    🟩 Green = Newly inserted element / Final sorted array
+    Blue = Already sorted portion  
+    Orange = Current element being inserted  
+    Red = Elements being compared/shifted  
+    Green = Newly inserted element / Final sorted array
     
     Enter numbers separated by commas (e.g., 5,2,8,1,9) and click Submit!
     """,
@@ -215,8 +215,7 @@ demo = gr.Interface(
         ["1"],
         ["5,5,5,5"],
         ["9,8,7,6,5,4,3,2,1"]
-    ],
-    theme=gr.themes.Soft()
+    ]
 )
 
 # Launch the Gradio app
