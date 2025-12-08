@@ -1,3 +1,5 @@
+import gradio as gr
+
 def insertion_sort(arr):
     """
     Performs insertion sort and returns the sorted array with step-by-step details.
