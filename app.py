@@ -165,7 +165,7 @@ def visualize_insertion_sort(array_input):
         buf.seek(0)
         error_img = Image.open(buf)
         plt.close(fig)
-        return result, error_img
+        return result, [error_img]
     
     # Run insertion sort with full visualization
     arr = result
@@ -174,8 +174,8 @@ def visualize_insertion_sort(array_input):
     # Format step-by-step text output
     output = "\n".join(steps)
     
-    # Return text explanation and final visualization image
-    return output, images[-1]
+    # Return text explanation and ALL visualization images
+    return output, images
 
 
 # Configure Gradio interface with input/output components
@@ -193,9 +193,11 @@ demo = gr.Interface(
             label="Step-by-Step Explanation", 
             lines=20
         ),
-        gr.Image(
-            label="Final Visualization",
-            type="pil"
+        gr.Gallery(
+            label="Visualization Steps",
+            columns=2,
+            rows=2,
+            height="auto"
         )
     ],
     title="Insertion Sort Visualizer",
@@ -208,6 +210,7 @@ demo = gr.Interface(
     Green = Newly inserted element / Final sorted array
     
     Enter numbers separated by commas (e.g., 5,2,8,1,9) and click Submit!
+    Scroll through the gallery below to see each step of the sorting process.
     """,
     examples=[
         ["5,2,8,1,9"],
